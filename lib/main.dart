@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
-import 'package:bedoubank/pages/SlideAccueil.dart';
+import 'package:bedoubank/intro/SlideAccueil.dart';
 
 
 void main() => runApp(new MonApp());
@@ -50,11 +50,11 @@ class _SplashScreenState extends State<SplashScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             new Center(
-              child: new Image.asset('images/logo.png'),
+              child: new Image.asset('assets/images/logo.png'),
 
             ),
             new Center(
-              child: new Image.asset('images/loader.gif',width: 30.0,height: 30.0,),
+              child: new Image.asset('assets/images/loader.gif',width: 30.0,height: 30.0,),
 
             )
             
