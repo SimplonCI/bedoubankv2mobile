@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:bedoubank/Auth/login_2.dart';
+import 'package:bedoubank/Auth/login_part_with_secret_code.dart';
 
 
 
@@ -29,17 +29,8 @@ class LoginPage_1 extends StatefulWidget {
 
 class _LoginPage_1State extends State<LoginPage_1> {
 
-  
+  // clef pour validation des champ
   final _key = new GlobalKey<FormState>();
-
-  bool _secureText=true;
-
-  showHide(){
-    setState(() {
-      _secureText = !_secureText;
-    });
-  }
-
 
 
 
@@ -65,12 +56,13 @@ class _LoginPage_1State extends State<LoginPage_1> {
                 padding: EdgeInsets.only(top: 5.0)
             ),
             SizedBox(height: 30.0,),
+            // container of the logo
             Container(
               child: Container(
                 child: new Center(
                   child: Container(
                     child: new Image.asset('assets/images/logo2.png',
-                      width: 220.0,
+                      width: 240.0,
                       height: 100.0,
                     ),
                   ),
@@ -79,9 +71,10 @@ class _LoginPage_1State extends State<LoginPage_1> {
               ),
 
             ),
-            SizedBox(height: 30.0,),
+           //***** end end end ******
 
 
+           // container of the texte
             Container(
               padding: EdgeInsets.only(top: 2.0),
               child: Container(
@@ -95,14 +88,16 @@ class _LoginPage_1State extends State<LoginPage_1> {
                 ),
               ),
             ),
+            // ****** end end end end**********
             SizedBox(height: 20.0,),
 
-
+            // container du champ du numero de tel
             Container(
               padding: EdgeInsets.only(top: 20.0,left: 15.0,right: 15.0),
               child: Column(
                 children: <Widget>[
                   TextFormField(
+                    // validation
                     validator:  (e){
                       if(e.isEmpty)
                         return 'veuillez sasisir votre numero de telephone';
@@ -125,7 +120,7 @@ class _LoginPage_1State extends State<LoginPage_1> {
                   SizedBox(height: 40.0,),
 
 
-
+                  // begin of the next button
                   Container(
                     height: 60.0,
                     child: new Material(

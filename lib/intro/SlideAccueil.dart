@@ -125,6 +125,7 @@ class SlideAccueilState extends State<SlideAccueil> {
     ));
   }
 
+  // configuration du bouton suivant
   Widget renderNextBtn() {
     return Text(
       'SUIVANT',style: TextStyle(color: Colors.white,fontSize: 15.0),
@@ -132,12 +133,15 @@ class SlideAccueilState extends State<SlideAccueil> {
     );
   }
 
+  // configuration bouton terminer
   Widget renderDoneBtn() {
     return Text(
       'TERMINER',style: TextStyle(color: Colors.white,fontSize: 15.0),
 
     );
   }
+
+  // configuration bouton passer
 
   Widget renderSkipBtn() {
     return Text(
@@ -159,29 +163,29 @@ class SlideAccueilState extends State<SlideAccueil> {
       widthSkipBtn: 90.0,
       highlightColorSkipBtn: Color(0xff000000),
 
-      // Next button
+      // bouton suivant
       renderNextBtn: this.renderNextBtn(),
 
 
-      // Done button
+      // Bouton terminer
       renderDoneBtn: this.renderDoneBtn(),
       onDonePress: this.onDonePress,
       colorDoneBtn: Color(0x33000000),
       widthDoneBtn: 110.0,
       highlightColorDoneBtn: Color(0xff000000),
 
-      // Dot indicator
+      // Les indicateur de slide
       colorDot: Color(0x33D02090),
       colorActiveDot: Colors.white,
       sizeDot: 13.0,
 
       // Locale
-      locale: 'en',
+      locale: 'fr',
 
       // Show or hide status bar
       shouldHideStatusBar: true,
 
-      // Change slides only with buttons
+      // Possibilité de slider avec le doit
       isScrollable: true,
     );
   }
