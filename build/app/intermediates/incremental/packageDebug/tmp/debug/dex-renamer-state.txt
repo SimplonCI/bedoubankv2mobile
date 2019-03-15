@@ -1,4 +1,0 @@
-#Fri Mar 15 00:48:03 GMT 2019
-base.0=/home/hacker/Documents/bedoubank/build/app/intermediates/transforms/dexMerger/debug/0
-path.0=classes.dex
-renamed.0=classes.dex
