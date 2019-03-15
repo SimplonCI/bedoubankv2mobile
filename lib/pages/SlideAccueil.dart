@@ -39,7 +39,7 @@ class SlideAccueilState extends State<SlideAccueil> {
         centerWidget: Text("Replace this with a custom widget",
             style: TextStyle(color: Colors.white)),
 
-        pathImage: "images/logo_SGBCI.png",
+        pathImage: "images/transfer(1).png",
         backgroundColor: Color(0xff11172A),
         directionColorBegin: Alignment.topLeft,
         directionColorEnd: Alignment.bottomRight,
