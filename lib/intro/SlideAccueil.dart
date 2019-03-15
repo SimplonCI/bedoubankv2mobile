@@ -1,6 +1,19 @@
 import 'package:flutter/material.dart';
-
 import 'package:intro_slider/intro_slider.dart';
+import 'package:bedoubank/Auth/home.dart';
+
+class SlideHomme extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new MaterialApp(
+      home: new SlideAccueil(),
+      routes: <String, WidgetBuilder>{
+        '/Auth/home': (BuildContext context)=> new AccueilPage()
+      },
+    );
+  }
+}
+
 
 class SlideAccueil extends StatefulWidget {
   SlideAccueil({Key key}) : super(key: key);
@@ -13,10 +26,13 @@ class SlideAccueil extends StatefulWidget {
 class SlideAccueilState extends State<SlideAccueil> {
   List<Slide> slides = new List();
 
+
+  // debut des slides
   @override
   void initState() {
     super.initState();
 
+    // declaration du premier slide
     slides.add(
       new Slide(
         title:
@@ -46,6 +62,8 @@ class SlideAccueilState extends State<SlideAccueil> {
         onCenterItemPress: () {},
       ),
     );
+
+    // declaration du premier slide
     slides.add(
       new Slide(
         title: "RETRAIT",
@@ -67,6 +85,8 @@ class SlideAccueilState extends State<SlideAccueil> {
         directionColorEnd: Alignment.bottomLeft,
       ),
     );
+
+    // declaration du premier slide
     slides.add(
       new Slide(
         title: "PAYEMENT",
@@ -91,12 +111,18 @@ class SlideAccueilState extends State<SlideAccueil> {
     );
   }
 
+  // indication du chemin vers lequel on va lorsqu'on appui sur TERMINER
   void onDonePress() {
-    // TODO: go to next screen
+    Navigator.push(context, MaterialPageRoute(builder:
+        (context)=> new AccueilPage()
+    ));
   }
 
+  // indication du chemin vers lequel on va lorsqu'on appui sur PASSER
   void onSkipPress() {
-    // TODO: go to next screen
+    Navigator.push(context, MaterialPageRoute(builder:
+        (context)=> new AccueilPage()
+    ));
   }
 
   Widget renderNextBtn() {
