@@ -45,7 +45,7 @@ class _AccueilPageState extends State<AccueilPage> {
               children: <Widget>[
                 Expanded(
                   child: Padding(
-                    padding: const EdgeInsets.all(20.0),
+                    padding: const EdgeInsets.all(16.0),
                     // la partie qui nous permet de faire la redirection vert
                     // la page de connexion
                     child: GestureDetector(
@@ -57,11 +57,11 @@ class _AccueilPageState extends State<AccueilPage> {
                       child: new Container(
                         alignment: Alignment.center,
                         height: 60.0,
-                        width: 100.0,
+                        width: 120.0,
                         decoration: new BoxDecoration(
                           color: Color(0xff11172A),borderRadius: new BorderRadius.circular(15.0),
                         ),
-                        child: new Text('Acceder a mon compte',style: new TextStyle(fontSize: 25.0,color: Colors.white),),
+                        child: new Text('Acceder a mon compte',style: new TextStyle(fontSize: 20.0,color: Colors.white),),
                       ),
                     ),
                   ),

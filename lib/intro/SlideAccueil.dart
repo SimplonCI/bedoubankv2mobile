@@ -128,7 +128,7 @@ class SlideAccueilState extends State<SlideAccueil> {
   // configuration du bouton suivant
   Widget renderNextBtn() {
     return Text(
-      'SUIVANT',style: TextStyle(color: Colors.white,fontSize: 15.0),
+      'SUIVANT',style: TextStyle(color: Colors.white,fontSize: 10.0),
 
     );
   }
@@ -136,7 +136,7 @@ class SlideAccueilState extends State<SlideAccueil> {
   // configuration bouton terminer
   Widget renderDoneBtn() {
     return Text(
-      'TERMINER',style: TextStyle(color: Colors.white,fontSize: 15.0),
+      'TERMINER',style: TextStyle(color: Colors.white,fontSize: 10.0),
 
     );
   }
@@ -145,7 +145,7 @@ class SlideAccueilState extends State<SlideAccueil> {
 
   Widget renderSkipBtn() {
     return Text(
-      'PASSER',style: TextStyle(color: Colors.white,fontSize: 15.0),
+      'PASSER',style: TextStyle(color: Colors.white,fontSize: 10.0),
 
     );
   }

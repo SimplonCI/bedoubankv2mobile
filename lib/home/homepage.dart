@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
 
 class AccueilMembre extends StatefulWidget {
@@ -12,18 +13,163 @@ class _AccueilMembreState extends State<AccueilMembre> {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       body: Column(
           children: <Widget>[
             // appel du header en bleu avec le logo
             new HomeScreenTopPart(),
             SizedBox(height: 10.0,),
-            LesGrilles()
+            MyCards()
+
+
           ],
       ),
     );
   }
 }
+
+
+
+class MyCards extends StatefulWidget {
+  @override
+  _MyCardsState createState() => _MyCardsState();
+}
+
+class _MyCardsState extends State<MyCards> {
+
+
+  @override
+  Widget build(BuildContext context) {
+
+    // RESPONSIVE WIDTH AND HEIGHT DEFINED
+
+    double width, height;
+
+    if (MediaQuery.of(context).orientation == Orientation.landscape){
+      width = MediaQuery.of(context).size.width * 0.25; // width = 25% of the screen
+      height = MediaQuery.of(context).size.height * 0.25; //height = 25% of the screen
+    }
+    else{
+      width = MediaQuery.of(context).size.width * 0.10; // width = 10% of the screen
+      height = MediaQuery.of(context).size.height * 0.10; //height = 10% of the screen
+    }
+
+    // END OF RESPONSIVE VALUES
+
+
+
+    return SingleChildScrollView(
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            SizedBox(height: 10.0,),
+            // widget calling the card content
+            CardContents()
+          ],
+        ),
+
+      ),
+    );
+  }
+}
+
+
+// BEGINING ON CARD CONTENTS WIDGETS
+
+
+class CardContents extends StatefulWidget {
+  @override
+  _CardContentsState createState() => _CardContentsState();
+}
+
+class _CardContentsState extends State<CardContents> {
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      child: Stack(
+        children: <Widget>[
+          Container(
+            width: MediaQuery.of(context).size.width,
+            child: Column(
+              children: <Widget>[
+                Row(
+                  children: <Widget>[
+                    Card(
+                      child: Container(
+                        width: 135.0,
+                        height: 120.0,
+                        child: Column(
+                          children: <Widget>[
+                              Padding(padding: EdgeInsets.only(top: 5.0)),
+                            Image.asset('assets/images/transfer(1).png',width: 60.0,height: 60.0,),
+                            Text('TRANSFERT',style: TextStyle(fontSize: 15.0),)
+                          ],
+                        ),
+                      ),
+                    ),
+                    Card(
+                      child: Container(
+                        width: 135.0,
+                        height: 120.0,
+                        child: Column(
+                          children: <Widget>[
+                            Padding(padding: EdgeInsets.only(top: 5.0)),
+                            Image.asset('assets/images/transfer(1).png',width: 60.0,height: 60.0,),
+                            Text('TRANSFERT',style: TextStyle(fontSize: 15.0),)
+                          ],
+                        ),
+                      ),
+                    ),
+
+                  ],
+                ),
+
+                SizedBox(height: 10.0,),
+                Row(
+                  children: <Widget>[
+                    Card(
+                      child: Container(
+                        width: 135.0,
+                        height: 120.0,
+                        child: Column(
+                          children: <Widget>[
+                            Padding(padding: EdgeInsets.only(top: 5.0)),
+                            Image.asset('assets/images/transfer(1).png',width: 60.0,height: 60.0,),
+                            Text('TRANSFERT',style: TextStyle(fontSize: 15.0),)
+                          ],
+                        ),
+                      ),
+                    ),
+                    Card(
+                      child: Container(
+                        width: 135.0,
+                        height: 120.0,
+                        child: Column(
+                          children: <Widget>[
+                            Padding(padding: EdgeInsets.only(top: 5.0)),
+                            Image.asset('assets/images/transfer(1).png',width: 60.0,height: 60.0,),
+                            Text('TRANSFERT',style: TextStyle(fontSize: 15.0),)
+                          ],
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ],
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
+
+
+// END OF WIDGET OF CARD CONTENTS
+
 
 
 
@@ -38,6 +184,7 @@ class HomeScreenTopPart extends StatefulWidget {
 }
 
 class _HomeScreenTopPartState extends State<HomeScreenTopPart> {
+
   @override
   Widget build(BuildContext context) {
 
@@ -55,7 +202,7 @@ class _HomeScreenTopPartState extends State<HomeScreenTopPart> {
                SizedBox(height: 108.0,),
                Card(
                  margin: EdgeInsets.symmetric(horizontal: 17.0),
-                 elevation: 6.0,
+                 elevation: 5.0,
                  child: Container(
                    padding: EdgeInsets.all(18.0),
                    child: Row(
@@ -82,6 +229,7 @@ class _HomeScreenTopPartState extends State<HomeScreenTopPart> {
                    ),
                  ),
                ),
+
              ],
            ),
         // colonne contenant le bouton de deconnexion
@@ -91,29 +239,4 @@ class _HomeScreenTopPartState extends State<HomeScreenTopPart> {
   }
 }
 // fiin fiin fiin fiinfiinfiinfiinfiin
-
-
-
-class LesGrilles extends StatefulWidget {
-  @override
-  _LesGrillesState createState() => _LesGrillesState();
-}
-
-class _LesGrillesState extends State<LesGrilles> {
-
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-
-    );
-  }
-}
-
-
-
-
-
-
-
 
