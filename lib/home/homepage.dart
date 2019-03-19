@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:bedoubank/operations/transfert/transfert_home_page.dart';
+import 'package:bedoubank/operations/payement/payement_home_page.dart';
 
 
 class AccueilMembre extends StatefulWidget {
@@ -217,16 +218,28 @@ class _CardContentsState extends State<CardContents> {
                 SizedBox(height: 10.0,),
                 Row(
                   children: <Widget>[
-                    Card(
-                      child: Container(
-                        width: 135.0,
-                        height: 120.0,
-                        child: Column(
-                          children: <Widget>[
-                            Padding(padding: EdgeInsets.only(top: 5.0)),
-                            Image.asset('assets/images/transfer(1).png',width: 60.0,height: 60.0,),
-                            Text('PAYEMENT',style: TextStyle(fontSize: 15.0),)
-                          ],
+                    GestureDetector(
+                      onTap: (){
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            // builder methods always take context!
+                            builder: (context) {
+                              return PayementHomePage();
+                            },
+                          ),
+                        );
+                      },
+                      child: Card(
+                        child: Container(
+                          width: 135.0,
+                          height: 120.0,
+                          child: Column(
+                            children: <Widget>[
+                              Padding(padding: EdgeInsets.only(top: 5.0)),
+                              Image.asset('assets/images/transfer(1).png',width: 60.0,height: 60.0,),
+                              Text('PAYEMENT',style: TextStyle(fontSize: 15.0),)
+                            ],
+                          ),
                         ),
                       ),
                     ),
