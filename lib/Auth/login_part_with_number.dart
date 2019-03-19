@@ -43,9 +43,13 @@ class _LoginPage_1State extends State<LoginPage_1> {
         title: new Text('Authentification'),
         centerTitle: true,
         elevation: 0.0,
-        leading: IconButton(icon: Icon(Icons.arrow_back_ios,size: 30.0,), onPressed: (){}),
+        leading: GestureDetector(
+          onTap: (){
+            Navigator.pop(context);
+          },
+            child: Icon(Icons.arrow_back)),
         actions: <Widget>[
-          IconButton(icon: Icon(Icons.help,size: 40.0,), onPressed: (){})
+         Icon(Icons.help_outline)
         ],
       ),
       body: Form(

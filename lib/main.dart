@@ -12,7 +12,7 @@ class MonApp extends StatelessWidget{
     return new MaterialApp(
       home: new SplashScreen(),
       theme: new ThemeData(
-          primarySwatch: Colors.blue
+        primaryColor: Color(0xff11172A)
       ),
       debugShowCheckedModeBanner: false,
       routes: <String, WidgetBuilder>{

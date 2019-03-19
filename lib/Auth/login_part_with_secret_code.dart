@@ -62,9 +62,13 @@ class _LoginPage_2State extends State<LoginPage_2> {
         title: new Text('Code secret'),
         centerTitle: true,
         elevation: 0.0,
-        leading: IconButton(icon: Icon(Icons.arrow_back_ios,size: 30.0,), onPressed: (){}),
+        leading: GestureDetector(
+          onTap: (){
+            Navigator.pop(context);
+          },
+            child: Icon(Icons.arrow_back)),
         actions: <Widget>[
-          IconButton(icon: Icon(Icons.help,size: 40.0,), onPressed: (){})
+          Icon(Icons.help_outline)
         ],
       ),
       body: Form(
