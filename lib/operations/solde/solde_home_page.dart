@@ -1,37 +1,60 @@
 
 import 'package:flutter/material.dart';
-import 'package:bedoubank/Auth/login_part_with_secret_code.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:bedoubank/home/homepage.dart';
 
 
-
-class Login1 extends StatelessWidget{
+class SoldeHomePage extends StatefulWidget {
 
   @override
-  Widget build(BuildContext context) {
+  _SoldeHomePageState createState() => _SoldeHomePageState();
 
-    return new MaterialApp(
-      debugShowCheckedModeBanner: false,
-      routes: <String, WidgetBuilder>{
-        "/inscription": (BuildContext context) => new LoginPage_2(),
-
-      },
-
-      home: new LoginPage_1(),
-      title: "My BigBank",
-    );
-  }
 }
 
-class LoginPage_1 extends StatefulWidget {
-  @override
-  _LoginPage_1State createState() => _LoginPage_1State();
+
+
+
+// ALERT DIALOG
+
+enum ConfirmAction{OK}
+
+Future<ConfirmAction> _asyncConfirmDialog(BuildContext context) async{
+  return showDialog<ConfirmAction>(
+      context: context,
+      barrierDismissible: false,
+      builder: (BuildContext context){
+        return AlertDialog(
+          title: Text('CONSULTATION'),
+          content: const Text('Bonjour Sosthene, votre solde est de: 12.000.000 f cfa'),
+          actions: <Widget>[
+            FlatButton(onPressed: (){
+              Navigator.of(context).pop(ConfirmAction.OK);
+            }, child: Text('OK'))
+          ],
+        );
+      }
+  );
 }
 
-class _LoginPage_1State extends State<LoginPage_1> {
+class _SoldeHomePageState extends State<SoldeHomePage> {
 
-  // clef pour validation des champ
+
+
+
+// declaring key for the form
   final _key = new GlobalKey<FormState>();
+
+
+  // declaration of boolen for hidding or showing the password
+
+  bool _secureText=true;
+
+  showHide(){
+    setState(() {
+      _secureText = !_secureText;
+    });
+  }
+
+  // *************end end end end end end********
 
 
 
@@ -39,18 +62,19 @@ class _LoginPage_1State extends State<LoginPage_1> {
   Widget build(BuildContext context) {
 
     return Scaffold(
+      // begin of appBar
       appBar: new AppBar(
         backgroundColor: Color(0xff11172A),
-        title: new Text('Authentification'),
+        title: new Text('SOLDE'),
         centerTitle: true,
         elevation: 0.0,
         leading: GestureDetector(
-          onTap: (){
-            Navigator.pop(context);
-          },
+            onTap: (){
+              Navigator.pop(context);
+            },
             child: Icon(Icons.arrow_back)),
         actions: <Widget>[
-         Icon(Icons.help_outline)
+          Icon(Icons.help_outline)
         ],
       ),
       body: Form(
@@ -60,8 +84,10 @@ class _LoginPage_1State extends State<LoginPage_1> {
             Padding(
                 padding: EdgeInsets.only(top: 5.0)
             ),
+
             SizedBox(height: 30.0,),
-            // container of the logo
+
+            // our image container
             Container(
               child: Container(
                 child: new Center(
@@ -76,41 +102,36 @@ class _LoginPage_1State extends State<LoginPage_1> {
               ),
 
             ),
-           //***** end end end ******
 
-
-           // container of the texte
+            //***** our texte container*******
             Container(
               padding: EdgeInsets.only(top: 2.0),
               child: Container(
                 child: new Center(
                   child: Container(
-                    child: new Text('Nous avond besoin de verifier votre numero',
-                      textAlign: TextAlign.center,
+                    child: new Text('Veuillez entrer votre code secret pour verifier votre solde',textAlign: TextAlign.center,
                       style: new TextStyle(fontSize: 20.0,fontWeight: FontWeight.bold,color: Colors.black),
                     ),
                   ),
                 ),
               ),
             ),
-            // ****** end end end end**********
-            SizedBox(height: 20.0,),
-
-            // container du champ du numero de tel
             Container(
               padding: EdgeInsets.only(top: 20.0,left: 15.0,right: 15.0),
               child: Column(
                 children: <Widget>[
+
+                  SizedBox(height: 10.0,),
                   TextFormField(
-                    // validation
+                    //***** validator*****
                     validator:  (e){
                       if(e.isEmpty)
-                        return 'veuillez sasisir votre numero de telephone';
+                        return 'veuillez saisir votre code secret';
                     },
-
+                    obscureText: _secureText,
                     decoration: new InputDecoration(
-                      hintText: '+225',
-                      labelText: 'Numero de telephone',
+                      labelText: 'Code secret',
+                      suffixIcon: IconButton(icon: Icon(_secureText ? Icons.visibility: Icons.visibility_off), onPressed: showHide,),
                       labelStyle:
                       TextStyle(
                           fontSize: 15.0,
@@ -124,31 +145,25 @@ class _LoginPage_1State extends State<LoginPage_1> {
                   ),
                   SizedBox(height: 40.0,),
 
-
-                  // begin of the next button
                   Container(
                     height: 60.0,
                     child: new Material(
                       borderRadius: BorderRadius.circular(20.0),
+
                       color: Color(0xff11172A),
                       child: GestureDetector(
-                        onTap: (){
-                          Navigator.push(context, new MaterialPageRoute(
-                              builder: (context) =>
-                              new LoginPage_2())
-                          );
+                        onTap: ()async{
+                          final ConfirmAction action = await _asyncConfirmDialog(context);
+                          print("Confirm Action $action" );
                         },
                         child: new Center(
-                          child: new Text('SUIVANT',style: new TextStyle(fontSize: 25.0,color: Colors.white ,fontWeight: FontWeight.bold),),
+                          child: new Text('VERIFIER',style: new TextStyle(fontSize: 25.0,color: Colors.white ,fontWeight: FontWeight.bold),),
                         ),
                       ),
                     ),
                   ),
 
-
-
-                  SizedBox(height: 20.0,),
-
+                  SizedBox(height: 30.0,),
                 ],
               ),
             )

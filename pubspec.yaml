@@ -21,6 +21,7 @@ dependencies:
     sdk: flutter
   intro_slider: ^1.1.7
   flutter_staggered_grid_view: ^0.2.7
+  flutter_svg: ^0.12.0
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -46,14 +47,29 @@ flutter:
   assets:
      - assets/images/logo.png
      - assets/images/atm.svg
+     - assets/images/wallet.svg
      - assets/images/credit-cards-payment.svg
+     - assets/images/settings.svg
+     - assets/images/clock.svg
+     - assets/images/invoice.svg
+     - assets/images/shopping-cart.svg
      - assets/images/payment-method.svg
+     - assets/images/horizontal-line.svg
+     - assets/images/substract.svg
      - assets/images/logo_SGBCI.png
      - assets/images/loginx.png
      - assets/images/userandroid.png
      - assets/images/loader.gif
      - assets/images/transfer(1).png
      - assets/images/logo2.png
+     - assets/images/historical.png
+     - assets/images/facture.png
+     - assets/images/payement_transport.png
+     - assets/images/retrait.png
+     - assets/images/setting.png
+     - assets/images/solde.png
+     - assets/images/transfert.png
+     - assets/images/payement.png
 
   #  - images/a_dot_burr.jpeg
   #  - images/a_dot_ham.jpeg

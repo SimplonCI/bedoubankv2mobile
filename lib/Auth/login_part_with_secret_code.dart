@@ -12,7 +12,7 @@ class Login1 extends StatelessWidget{
     return new MaterialApp(
       debugShowCheckedModeBanner: false,
        routes: <String, WidgetBuilder>{
-      "/home/homepage.dart": (BuildContext context) => new AccueilMembre(),
+      "/home/homepage.dart": (BuildContext context) => new HomePage(),
 
        },
 
@@ -149,7 +149,7 @@ class _LoginPage_2State extends State<LoginPage_2> {
                         onTap: (){
                           Navigator.push(context, new MaterialPageRoute(
                              builder: (context) =>
-                              new AccueilMembre())
+                              new HomePage())
                           );
                         },
                         child: new Center(

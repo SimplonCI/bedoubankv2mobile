@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 
-
 class TransfertHomePage extends StatefulWidget {
   @override
   _TransfertHomePageState createState() => _TransfertHomePageState();
@@ -87,7 +86,7 @@ class _TransfertHomePageState extends State<TransfertHomePage> {
               child: Container(
                 child: new Center(
                   child: Container(
-                        child: new Text('TRANSFEREZ VERS UN PROCHE',textAlign: TextAlign.center,
+                        child: new Text('TRANSFEREZ A UN PROCHE',textAlign: TextAlign.center,
                             style: TextStyle(fontSize: 20.0,fontWeight: FontWeight.bold),),
                   ),
                 ),

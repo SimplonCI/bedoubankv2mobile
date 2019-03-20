@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:bedoubank/Auth/login_part_with_number.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 
 class Home1 extends StatelessWidget {

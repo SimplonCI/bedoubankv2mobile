@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 
 class PayementHomePage extends StatefulWidget {
@@ -60,8 +61,8 @@ class _PayementHomePageState extends State<PayementHomePage> {
                           child: Column(
                             children: <Widget>[
                               Padding(padding: EdgeInsets.only(top: 5.0)),
-                              Image.asset('assets/images/transfer(1).png',width: 60.0,height: 60.0,),
-                              Text('MARCHANDISE',style: TextStyle(fontSize: 15.0),)
+                              SvgPicture.asset('assets/images/shopping-cart.svg',width: 60.0,height: 60.0,),
+                              Text('MARCHANDISE',style: TextStyle(fontSize: 15.0,fontWeight: FontWeight.bold),)
                             ],
                           ),
                         ),
@@ -73,8 +74,8 @@ class _PayementHomePageState extends State<PayementHomePage> {
                           child: Column(
                             children: <Widget>[
                               Padding(padding: EdgeInsets.only(top: 5.0)),
-                              Image.asset('assets/images/transfer(1).png',width: 60.0,height: 60.0,),
-                              Text('FACTURE',style: TextStyle(fontSize: 15.0),)
+                              SvgPicture.asset('assets/images/invoice.svg',width: 60.0,height: 60.0,),
+                              Text('FACTURE',style: TextStyle(fontSize: 15.0,fontWeight: FontWeight.bold),)
                             ],
                           ),
                         ),
@@ -92,8 +93,8 @@ class _PayementHomePageState extends State<PayementHomePage> {
                           child: Column(
                             children: <Widget>[
                               Padding(padding: EdgeInsets.only(top: 5.0)),
-                              Image.asset('assets/images/transfer(1).png',width: 60.0,height: 60.0,),
-                              Text('TRANSPORT',style: TextStyle(fontSize: 15.0),)
+                              Image.asset('assets/images/payement_transport.png',width: 60.0,height: 60.0,),
+                              Text('TRANSPORT',style: TextStyle(fontSize: 15.0,fontWeight: FontWeight.bold),)
                             ],
                           ),
                         ),
