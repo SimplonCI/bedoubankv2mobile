@@ -4,6 +4,7 @@ import 'package:bedoubank/operations/transfert/transfert_home_page.dart';
 import 'package:bedoubank/operations/payement/payement_home_page.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:bedoubank/operations/solde/solde_home_page.dart';
+import 'package:bedoubank/operations/parametres/parametres_home_page.dart';
 
 
 
@@ -308,19 +309,31 @@ class _CardContentsState extends State<CardContents> {
                       ),
                     ),
                   ),
-                  Card(
-                    child: Container(
-                      padding: EdgeInsets.all(5.0),
-                      width: 135.0,
-                      height: 120.0,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          SvgPicture.asset('assets/images/settings.svg',width: 70.0,height: 70.0,),
-                          SizedBox(height: 2.0,),
-                          Text('PARAMETRES',style: TextStyle(fontSize: 15.0,fontWeight: FontWeight.bold),),
-                          SvgPicture.asset('assets/images/horizontal-line.svg',width: 150.0,height: 20.0,),
-                        ],
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          // builder methods always take context!
+                          builder: (context) {
+                            return ParametresHomePage();
+                          },
+                        ),
+                      );
+                    },
+                    child: Card(
+                      child: Container(
+                        padding: EdgeInsets.all(5.0),
+                        width: 135.0,
+                        height: 120.0,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            SvgPicture.asset('assets/images/settings.svg',width: 70.0,height: 70.0,),
+                            SizedBox(height: 2.0,),
+                            Text('PARAMETRES',style: TextStyle(fontSize: 15.0,fontWeight: FontWeight.bold),),
+                            SvgPicture.asset('assets/images/horizontal-line.svg',width: 150.0,height: 20.0,),
+                          ],
+                        ),
                       ),
                     ),
                   )
